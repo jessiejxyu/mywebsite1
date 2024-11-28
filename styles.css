@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500&display=swap');
+
+body {
+    margin: 0;
+    font-family: 'Reem Kufi', sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #e0e0e0;
+    padding: 20px;
+    text-align: left;
+    width:100%;
+    /* Align title and subtitle to the left */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header p {
+    margin: 5px 0 0;
+    font-size: 16px;
+}
+
+nav {
+    background-color: #2b2b2b;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    flex-wrap: wrap;
+    padding-top: 10px;
+    width: 100%;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9em;
+    margin: 5px 10px;
+}
+nav a:hover {
+    animation: enlarge-text 0.3s forwards;
+}
+
+@keyframes enlarge-text {
+    0% {
+        font-size: 0.9em;
+        text-shadow: none;
+    }
+    100% {
+        font-size: 1.1em;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 180px); /* Adjusted for footer height */
+    background-color: black;
+    padding: 20px;
+}
+.content div {
+    display: flex;
+    justify-content: center; /* Centers the images inside the container */
+    align-items: center; /* Centers the images inside the container */
+    flex-wrap: wrap; /* Ensures images wrap if there's not enough space */
+    gap: 10px; /* Adds consistent spacing between images */
+}
+
+.content div img {
+    width: 200px; /* Fixed width */
+    height: 200px; /* Fixed height */
+    object-fit: cover; /* Ensures the image scales and crops to fit */
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin: 5px;
+    transition: transform 0.5s ease;
+}
+
+.content div img:hover {
+    transform: scale(1.05);
+    border-color: #e0e0e0;
+}
+
+
+footer {
+    background-color:#2b2b2b;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 5px 10px;
+    font-size: 14px;
+}
+footer a:hover {
+    animation: enlarge-text 0.3s forwards;
+}
+
+@keyframes enlarge-text {
+    0% {
+        font-size: 0.9em;
+        text-shadow: none;
+    }
+    100% {
+        font-size: 1.1em;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* Media Queries */
+@media (max-width: 600px) { /* Smartphone layout */
+    nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .content {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .content div img {
+        width: 80%; /* Full width for smaller screens */
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) { /* Tablet layout */
+    nav {
+        justify-content: space-evenly;
+    }
+
+    .content {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .content div img {
+        width: 40%; /* Adjusted for tablet view */
+    }
+
+    footer {
+        justify-content: space-evenly;
+    }
+}
+
+@media (min-width: 1025px) { /* Desktop layout */
+    .content div img {
+        width: 40%; /* Fixed for larger screens */
+    }
+
+    footer {
+        justify-content: space-evenly;
+    }
+    
+}
