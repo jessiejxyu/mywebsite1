@@ -57,11 +57,12 @@ nav a:hover {
 }
 
 .content {
+    /* color: white; */
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 20px;
-    background-color: #2b2b2b;
+    background-color:#2b2b2b;
 }
 
 .section {

@@ -1,28 +1,28 @@
-// Function to create typing animation
-function typeWriter(elementId, text, speed) {
+// Function to create the typing effect on <h1> element with the given ID
+function typeHeading(elementId, speed) {
+    const element = document.getElementById(elementId); // Select the <h1> element by its ID
+    const text = element.textContent; // Get the current text content of the <h1> element
     let i = 0;
-    const element = document.getElementById(elementId);
-    
-    if (!element) {
-        console.error("Element not found: " + elementId);
-        return;
-    }
 
-    element.innerHTML = ""; // Clear content before typing starts
+    element.textContent = ""; // Clear the content initially
 
+    // Function to type one letter at a time
     function type() {
         if (i < text.length) {
-            element.innerHTML += text.charAt(i); // Add one character at a time
+            element.textContent += text.charAt(i); // Add one character at a time
             i++;
-            setTimeout(type, speed); // Call type function again after the defined speed
+            setTimeout(type, speed); // Call type() again with delay for typing effect
         }
     }
-    
-    type(); // Start the typing animation
+
+    type(); // Start the typing effect
 }
 
-// Initialize typing animation when the page loads
+// Initialize typing effect when the page loads
 window.onload = function() {
-    const titleText = "CareerPathways"; // The text you want to type out
-    typeWriter('title', titleText, 150); // Speed of typing (in milliseconds)
+    typeHeading('main-heading', 150); // Speed of typing (150ms per letter)
 };
+
+
+
+
